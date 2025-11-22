@@ -20,7 +20,7 @@ jobs:
 
     - name: Log in to ACR
       run: |
-        az acr login --name mytestacr123
+        az acr login --name mytestacr123 --expose-token
 
     - name: Build and push Docker image
       run: |
@@ -38,5 +38,5 @@ jobs:
 
     - name: Deploy to AKS
       run: |
-        kubectl set image deployment/myapp-deployment myapp=$IMAGE_TAG
-        kubectl rollout status deployment/myapp-deployment
+        kubectl set image deployment/myapp myapp=$IMAGE_TAG
+        kubectl rollout status deployment/myapp
