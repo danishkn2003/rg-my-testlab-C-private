@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: azure-application-gateway
   rules:
-  - host: myapp.example.com
+  - host: dantech.co.in
     http:
       paths:
       - path: /
